@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HesApp Pro — Alacak, borç ve yapay zeka</title>
+  <meta name="description" content="HesApp Pro ile alacak, borç, yatırım ve net varlıklarını tek yerden yönet. Gemini asistanı, dekont/fatura okuma ve iCloud yedek." />
+  <meta property="og:title" content="HesApp Pro" />
+  <meta property="og:description" content="Alacak, borç ve yapay zeka — kişisel finans takibi." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/app-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand-mark" href="#ust">
+      <img src="assets/app-icon.png" width="36" height="36" alt="" />
+      <span>HesApp Pro</span>
+    </a>
+    <nav>
+      <a href="#ozellikler">Özellikler</a>
+      <a href="#guvenlik">Güvenlik</a>
+      <a href="https://sites.google.com/view/hesapp-pro-destek/ana-sayfa">Destek</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="ust">
+      <div class="hero-copy">
+        <p class="brand-hero">HesApp Pro</p>
+        <h1>Alacak, borç ve net varlık — tek bakışta.</h1>
+        <p class="lede">Kişi ve şirket portföylerini yönet; Gemini ile sor, dekont veya faturayı kayda dönüştür.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://apps.apple.com/search?term=HesApp%20Pro">App Store’da Gör</a>
+          <a class="btn ghost" href="https://sites.google.com/view/hesapp-pro-destek/ana-sayfa">Destek</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img class="phone" src="assets/hero-home.png" alt="" />
+      </div>
+    </section>
+
+    <section class="band" id="ozellikler">
+      <h2>Ne sunar?</h2>
+      <p class="section-lede">Günlük takip için sade; ihtiyaç duyunca güçlü.</p>
+      <ul class="feature-list">
+        <li>
+          <strong>Portföy takibi</strong>
+          <span>Bireysel ve şirket hesapları; TL, döviz, fon ve işlem geçmişi.</span>
+        </li>
+        <li>
+          <strong>Yapay zeka</strong>
+          <span>Gemini ile bakiye sor, işlem öner; dekont ve faturayı okutup kayıt taslağına çevir.</span>
+        </li>
+        <li>
+          <strong>Kart ve vade</strong>
+          <span>Banka ekstresi, hızlı harcama ve vadesi yaklaşanları tek listede gör.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="band quiet" id="guvenlik">
+      <h2>Kontrol sende</h2>
+      <p class="section-lede">Veriler cihazında; iCloud yedek isteğe bağlı. Reklam analitiği yok. Gemini paylaşımı yalnızca sen başlatınca ve onayınla.</p>
+      <div class="legal-row">
+        <a href="https://sites.google.com/view/hesapp-pro-privacy-policy/ana-sayfa">Gizlilik Politikası</a>
+        <a href="https://sites.google.com/view/hesapp-pro-kullanim-kosullari/ana-sayfa">Kullanım Koşulları</a>
+        <a href="mailto:metin_kayan@icloud.com">İletişim</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><span class="brand-inline">HesApp Pro</span> · iOS</p>
+  </footer>
+
+  <script>
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce) {
+      document.body.classList.add("motion-on");
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
+      }, { threshold: 0.18 });
+      document.querySelectorAll(".band, .hero-copy, .phone").forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll(".band, .hero-copy, .phone").forEach((el) => el.classList.add("in"));
+    }
+  </script>
+</body>
+</html>
